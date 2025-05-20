@@ -22,7 +22,8 @@ export default function Home() {
         src={Globe}
         className='h-80'/>
         </div>
-      </div>    </div>
+      </div> 
+         </div>
   )
 }
 

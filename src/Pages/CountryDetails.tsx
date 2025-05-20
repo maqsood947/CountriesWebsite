@@ -1,5 +1,5 @@
 import { useEffect, useState, useTransition } from "react";
-import { getCountryData, getCountryIndData } from "../Api/data";
+import { getCountryIndData } from "../Api/data";
 import { Loader } from "../components/Loader";
 import { useParams } from "react-router-dom";
 import { Country } from "../Types/Types";

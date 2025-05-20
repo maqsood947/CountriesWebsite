@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact.js";
 import Other from "./Pages/Other.js"
 import CountryDetails from "./Pages/CountryDetails.js";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -58,6 +59,7 @@ createRoutesFromElements(
 createRoot(document.getElementById("root")!).render(
 
   <StrictMode>
+
       <QueryClientProvider client={queryClient}>
 
     <RouterProvider router={router} />
