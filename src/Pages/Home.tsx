@@ -16,7 +16,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Right Image */}
         <div className="md:w-1/2">
         <img 
         src={Globe}
