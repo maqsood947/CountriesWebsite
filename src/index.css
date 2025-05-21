@@ -10,7 +10,7 @@
 }
 
 .app-button {
-  @apply p-2 bg-blue-900 rounded hover:bg-teal-500 transition text-white
+  @apply px-3 py-2 bg-blue-900 rounded hover:bg-teal-500 transition text-white
 }
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

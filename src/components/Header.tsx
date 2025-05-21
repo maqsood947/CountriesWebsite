@@ -37,11 +37,11 @@ export default function Header() {
             className="app-button">
             Login
           </Link>
-          <Link
-            to="/signup"
+          <NavLink
+            to="/GetStarted"
             className="app-button">
             Get Started
-          </Link>
+          </NavLink>
         </div>
 
         <div className="lg:hidden md:hidden sm:hidden">
