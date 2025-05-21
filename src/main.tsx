@@ -6,10 +6,11 @@ import Layout from "./layout.js";
 import Home from "./Pages/Home.js";
 import About from "./Pages/About.js";
 import Contact from "./Pages/Contact.js";
-import Other from "./Pages/Other.js"
+import Other from "./Pages/Countries.js"
 import CountryDetails from "./Pages/CountryDetails.js";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Countries from "./Pages/Countries.js";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -44,7 +45,7 @@ createRoutesFromElements(
       <Route path="" element= {<Home />}/>
       <Route path="About" element= {<About />}/>
       <Route path="Contact" element= {<Contact />}/>
-      <Route path="Other" element= {<Other />}/>
+      <Route path="Countries" element= {<Countries />}/>
       <Route path="CountryDetails/:id" element={<CountryDetails/>}/>
 
      

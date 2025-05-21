@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Header() {
-  const itemsLists = ["Home", "About", "Contact", "Other"];
+  const itemsLists = ["Home", "About", "Contact", "Countries"];
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -21,8 +21,8 @@ export default function Header() {
                   to={`/${item === "Home" ? "" : item.toLowerCase()}`}
                   className={({ isActive }) =>
                     `transition duration-200 ${
-                      isActive ? "text-red-400" : "text-gray-300"
-                    } hover:text-red-500`
+                      isActive ? "underline bold" : "text-gray-400"
+                    } hover:text-white`
                   }>
                   {item}
                 </NavLink>
@@ -34,12 +34,12 @@ export default function Header() {
         <div className="hidden lg:flex space-x-4">
           <Link
             to="/login"
-            className="px-4 py-2 border border-teal-400 rounded hover:bg-teal-400 hover:text-white transition">
+            className="app-button">
             Login
           </Link>
           <Link
             to="/signup"
-            className="px-4 py-2 bg-teal-400 rounded hover:bg-teal-500 transition text-white">
+            className="app-button">
             Get Started
           </Link>
         </div>

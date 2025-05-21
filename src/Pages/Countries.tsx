@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 import { Country } from "../Types/Types";
 
 
-export default function Other() {
+export default function Countries() {
   const [isPending, startTransition] = useTransition();
   const [countries, setCountries] = useState<Country[]>([]);
 
@@ -21,9 +21,6 @@ export default function Other() {
     });
   }, []);
 
-  if (isPending) return <Loader />;
-
-  // console.log(search, filter);
 
   const searchCountry = (country: Country): boolean => {
     if (search) {
@@ -58,12 +55,15 @@ export default function Other() {
         setSortOrder={setSortOrder}
       />
 
-      
+      {isPending ? <Loader/> :(
+
       <ul className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9">
         {sortedCountries.map((curCountry, index) => (
           <CountryCard country={curCountry} key={index} />
         ))}
       </ul>
+      )
+}
     </section>
   );
 }

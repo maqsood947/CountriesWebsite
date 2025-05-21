@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold text-teal-400 mb-2">OneDesktop</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">OneDesktop</h2>
           <p className="text-sm text-gray-300">
             Your one-stop POS desktop solution for efficient business management.
           </p>
@@ -14,7 +14,7 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-xl font-semibold mb-3 text-teal-300">Quick Links</h3>
+          <h3 className="text-xl font-semibold mb-3 text-white">Quick Links</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li><a href="#" className="hover:text-white">Home</a></li>
             <li><a href="#" className="hover:text-white">Features</a></li>
@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Social Media */}
         <div>
-          <h3 className="text-xl font-semibold mb-3 text-teal-300">Follow Us</h3>
+          <h3 className="text-xl font-semibold mb-3 text-white">Follow Us</h3>
           <div className="flex space-x-4">
             <a href="#"><FaFacebookF className="hover:text-teal-400" /></a>
             <a href="#"><FaTwitter className="hover:text-teal-400" /></a>
