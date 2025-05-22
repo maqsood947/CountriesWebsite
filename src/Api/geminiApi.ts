@@ -1,6 +1,6 @@
 // src/api/geminiApi.ts
 export const generateGeminiContent = async (text: string) => {
-  const apiKey = "AIzaSyCiAMwiL6U6BprgTZkSXVFsfwUCcD5yylM";
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   const response = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
@@ -21,7 +21,10 @@ export const generateGeminiContent = async (text: string) => {
 
   if (!response.ok) {
     const error = await response.json();
+    console.log(apiKey);
+
     throw new Error(error.error.message);
+    
   }
 
   const result = await response.json();
