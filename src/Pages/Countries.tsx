@@ -5,7 +5,6 @@ import { Loader } from "../components/Loader";
 import SearchBar from "../components/SearchBar";
 import { Country } from "../Types/Types";
 
-
 export default function Countries() {
   const [isPending, startTransition] = useTransition();
   const [countries, setCountries] = useState<Country[]>([]);
@@ -20,7 +19,6 @@ export default function Countries() {
       setCountries(res.data);
     });
   }, []);
-
 
   const searchCountry = (country: Country): boolean => {
     if (search) {
@@ -38,12 +36,14 @@ export default function Countries() {
     (country) => searchCountry(country) && filterRegion(country)
   );
 
+  const sortedCountries = [...filterCountries].sort((a, b) => {
+    return sortOrder === "asc"
+      ? a.name.common.localeCompare(b.name.common)
+      : b.name.common.localeCompare(a.name.common);
+  });
 
-    const sortedCountries = [...filterCountries].sort((a, b) => {
-  return sortOrder === "asc"
-    ? a.name.common.localeCompare(b.name.common)
-    : b.name.common.localeCompare(a.name.common);
-});
+  if(isPending) return <Loader />
+
   return (
     <section className=" container-gradient px-4">
       <SearchBar
@@ -55,15 +55,11 @@ export default function Countries() {
         setSortOrder={setSortOrder}
       />
 
-      {isPending ? <Loader/> :(
-
       <ul className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9">
         {sortedCountries.map((curCountry, index) => (
           <CountryCard country={curCountry} key={index} />
         ))}
       </ul>
-      )
-}
     </section>
   );
 }
